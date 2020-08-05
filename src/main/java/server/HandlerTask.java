@@ -10,9 +10,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.RejectedExecutionException;
 
-public class HandlerTask extends ServerSocketUsingTask {
+class HandlerTask extends ServerSocketUsingTask {
 
-  public HandlerTask(ServerSocket socket, Server.CancellingExecutor executor) {
+  HandlerTask(ServerSocket socket, CancellingExecutor executor) {
     super(socket, executor);
   }
 

@@ -5,11 +5,11 @@ import java.net.ServerSocket;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.RunnableFuture;
 
-public abstract class ServerSocketUsingTask<T> implements Server.CancellableTask<T> {
-  protected final ServerSocket socket;
-  protected final Server.CancellingExecutor executor;
+abstract class ServerSocketUsingTask<T> implements CancellableTask<T> {
+  final ServerSocket socket;
+  final CancellingExecutor executor;
 
-  public ServerSocketUsingTask(ServerSocket socket, Server.CancellingExecutor executor) {
+  ServerSocketUsingTask(ServerSocket socket, CancellingExecutor executor) {
     this.socket = socket;
     this.executor = executor;
   }

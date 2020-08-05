@@ -5,11 +5,11 @@ import java.net.Socket;
 import java.util.concurrent.FutureTask;
 import java.util.concurrent.RunnableFuture;
 
-public abstract class SocketUsingTask<T> implements Server.CancellableTask<T> {
+abstract class SocketUsingTask<T> implements CancellableTask<T> {
   private Socket socket;
   private static final long WAIT_TIME = 60000;
 
-  public SocketUsingTask(Socket socket) {
+  SocketUsingTask(Socket socket) {
     this.socket = socket;
   }
 
